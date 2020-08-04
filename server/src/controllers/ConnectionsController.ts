@@ -3,7 +3,11 @@ import { Request, Response } from 'express';
 import db from '../database/connection';
 
 export default class ConnectionsController {
-  public async index(request: Request, response: Response) {}
+  public async index(request: Request, response: Response) {
+    const [{ total }] = await db('connections').count('* as total');
+
+    return response.json({ total });
+  }
 
   public async create(request: Request, response: Response) {
     const { user_id } = request.body;
