@@ -48,11 +48,29 @@ function TeacherForm() {
         </fieldset>
 
         <fieldset>
-          <legend>Horários disponíveis</legend>
+          <legend>
+            Horários disponíveis
+            <button type="button">+ Novo horário</button>
+          </legend>
 
-          <Input name="name" label="Nome completo" />
-          <Input name="avatar" label="Avatar" />
-          <Input name="whatsapp" label="WhatsApp" />
+          <div className="schedule-item">
+            <Select
+              name="subject"
+              label="Matéria"
+              options={[
+                { value: 'Artes', label: 'Artes' },
+                { value: 'Matemática', label: 'Matemática' },
+                { value: 'Português', label: 'Português' },
+                { value: 'Química', label: 'Química' },
+                { value: 'Física', label: 'Física' },
+                { value: 'Geografia', label: 'Geografia' },
+                { value: 'Informática', label: 'Informática' },
+                { value: 'História', label: 'História' },
+              ]}
+            />
+            <Input name="from" label="Das" type="time" />
+            <Input name="to" label="Até" type="time" />
+          </div>
         </fieldset>
 
         <footer>
