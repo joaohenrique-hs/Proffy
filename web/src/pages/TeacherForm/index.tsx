@@ -1,5 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 
+import api from '../../services/api';
+
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
@@ -16,7 +18,7 @@ function TeacherForm() {
   const [bio, setBio] = useState('');
 
   const [subject, setSubject] = useState('');
-  const [cost, setCost] = useState('');
+  const [cost, setCost] = useState(0);
 
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: 0, from: '', to: '' },
@@ -29,7 +31,7 @@ function TeacherForm() {
   function setScheduleItemValue(
     position: number,
     field: string,
-    value: string
+    value: string | number
   ) {
     const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
       if (index === position) {
@@ -45,15 +47,22 @@ function TeacherForm() {
   function handleCreateClass(e: FormEvent) {
     e.preventDefault();
 
-    console.log({
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost,
-      scheduleItems,
-    });
+    api
+      .post('classes', {
+        name,
+        avatar,
+        whatsapp,
+        bio,
+        subject,
+        cost,
+        schedule: scheduleItems,
+      })
+      .then(() => {
+        alert('Cadastro realizado com sucesso!');
+      })
+      .catch(() => {
+        alert('Cadastro realizado com sucesso!');
+      });
   }
 
   return (
@@ -128,7 +137,7 @@ function TeacherForm() {
               label="Custo da sua hora por aula"
               value={cost}
               onChange={(e) => {
-                setCost(e.target.value);
+                setCost(Number(e.target.value));
               }}
             />
           </fieldset>
@@ -143,13 +152,17 @@ function TeacherForm() {
 
             {scheduleItems.map((scheduleItem, index) => {
               return (
-                <div key={scheduleItem.week_day} className="schedule-item">
+                <div key={index} className="schedule-item">
                   <Select
                     name="week_day"
                     label="Dia da semana"
                     value={scheduleItem.week_day}
                     onChange={(e) =>
-                      setScheduleItemValue(index, 'week_day', e.target.value)
+                      setScheduleItemValue(
+                        index,
+                        'week_day',
+                        Number(e.target.value)
+                      )
                     }
                     options={[
                       { value: '0', label: 'Domingo' },
