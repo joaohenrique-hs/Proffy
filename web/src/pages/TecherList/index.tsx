@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
+
+import api from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
@@ -8,13 +10,35 @@ import Select from '../../components/Select';
 import './styles.css';
 
 function TeacherList() {
+  const [subject, setSubject] = useState('');
+  const [week_day, setWeek_day] = useState(0);
+  const [time, setTime] = useState('');
+
+  async function searchTeachers(e: FormEvent) {
+    e.preventDefault();
+
+    const response = await api.get('classes', {
+      params: {
+        subject,
+        week_day,
+        time,
+      },
+    });
+
+    console.log(response.data);
+  }
+
   return (
     <div id="page-teacher-list" className="container">
       <PageHeader title="Estes são os proffys disponíveis.">
-        <form id="search-teachers">
+        <form onSubmit={searchTeachers} id="search-teachers">
           <Select
             name="subject"
             label="Matéria"
+            value={subject}
+            onChange={(e) => {
+              setSubject(e.target.value);
+            }}
             options={[
               { value: 'Artes', label: 'Artes' },
               { value: 'Matemática', label: 'Matemática' },
@@ -29,6 +53,10 @@ function TeacherList() {
           <Select
             name="week_day"
             label="Dia da semana"
+            value={week_day}
+            onChange={(e) => {
+              setWeek_day(Number(e.target.value));
+            }}
             options={[
               { value: '0', label: 'Domingo' },
               { value: '1', label: 'Segunda-feira' },
@@ -39,7 +67,17 @@ function TeacherList() {
               { value: '6', label: 'Sábado' },
             ]}
           />
-          <Input type="time" name="time" label="Hora" />
+          <Input
+            type="time"
+            name="time"
+            label="Hora"
+            value={time}
+            onChange={(e) => {
+              setTime(e.target.value);
+            }}
+          />
+
+          <button type="submit">Buscar</button>
         </form>
       </PageHeader>
 
