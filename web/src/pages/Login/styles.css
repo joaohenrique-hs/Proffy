@@ -1,0 +1,36 @@
+#page-login {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lateral-view {
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-primary);
+  color: var(--color-text-in-primary);
+}
+
+.page-login-container {
+  height: 100%;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-login-content h1 {
+  font-family: Poppins;
+  color: var(--color-text-title);
+}
+
+.page-login-content {
+}
