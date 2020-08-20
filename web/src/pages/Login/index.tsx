@@ -2,6 +2,7 @@ import React from 'react';
 
 import logoImg from '../../assets/images/logo.svg';
 import './styles.css';
+import Input from '../../components/Input';
 
 function Login() {
   return (
@@ -17,8 +18,8 @@ function Login() {
           <h1>Fazer login</h1>
           <form>
             <div className="input-container">
-              <input type="text" />
-              <input type="text" />
+              <Input name="email" placeholder="Email"></Input>
+              <Input name="password" placeholder="Senha"></Input>
             </div>
           </form>
         </div>
