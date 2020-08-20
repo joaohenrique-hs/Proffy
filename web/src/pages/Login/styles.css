@@ -14,7 +14,10 @@
   justify-content: center;
   align-items: center;
 
-  background: var(--color-primary);
+  background-color: var(--color-primary);
+  background-image: url('../../assets/images/success-background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--color-text-in-primary);
 }
 
