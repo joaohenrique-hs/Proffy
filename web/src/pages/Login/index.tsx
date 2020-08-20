@@ -10,13 +10,13 @@ function Login() {
       <div className="lateral-view">
         <div className="logo-container">
           <img src={logoImg} alt="Proffy" />
-          <h2>Sua plataforma de estudos online</h2>
+          <h2>Sua plataforma de estudos online.</h2>
         </div>
       </div>
       <div className="page-login-container">
         <div className="page-login-content">
-          <h1>Fazer login</h1>
           <form>
+            <h1>Fazer login</h1>
             <div className="input-container">
               <Input name="email" placeholder="Email"></Input>
               <Input name="password" placeholder="Senha"></Input>

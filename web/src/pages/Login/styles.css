@@ -18,6 +18,14 @@
   color: var(--color-text-in-primary);
 }
 
+.lateral-view img {
+  height: 12rem;
+}
+
+.lateral-view h2 {
+  max-width: 400px;
+}
+
 .page-login-container {
   height: 100%;
   flex: 1;
@@ -27,10 +35,24 @@
   align-items: center;
 }
 
+.page-login-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .page-login-content h1 {
   font-family: Poppins;
   color: var(--color-text-title);
 }
 
-.page-login-content {
+.page-login-content form {
+  width: 100%;
+  padding-left: 9rem;
+  padding-right: 20rem;
+}
+
+.page-login-content .input-container {
+  margin-top: 1.6rem;
 }
