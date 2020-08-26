@@ -22,7 +22,7 @@
 }
 
 .lateral-view img {
-  height: 12rem;
+  height: 15rem;
 }
 
 .lateral-view h2 {
@@ -51,9 +51,7 @@
 }
 
 .page-login-content form {
-  width: 100%;
-  padding-left: 9rem;
-  padding-right: 20rem;
+  width: 60%;
 }
 
 .page-login-content .input-container {
