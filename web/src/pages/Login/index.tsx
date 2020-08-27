@@ -3,6 +3,7 @@ import React from 'react';
 import logoImg from '../../assets/images/logo.svg';
 import './styles.css';
 import Input from '../../components/Input';
+import { FiEye } from 'react-icons/fi';
 
 function Login() {
   return (
@@ -19,7 +20,12 @@ function Login() {
             <h1>Fazer login</h1>
             <div className="input-container">
               <Input name="email" placeholder="Email" />
-              <Input name="password" placeholder="Senha" hide />
+              <Input
+                name="password"
+                placeholder="Senha"
+                hide
+                icon={FiEye}
+              />
             </div>
             <button type="button">Entrar</button>
           </form>

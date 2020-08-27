@@ -53,6 +53,7 @@ textarea {
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 .container {
