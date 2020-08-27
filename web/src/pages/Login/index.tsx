@@ -18,8 +18,8 @@ function Login() {
           <form>
             <h1>Fazer login</h1>
             <div className="input-container">
-              <Input name="email" placeholder="Email"></Input>
-              <Input name="password" placeholder="Senha"></Input>
+              <Input name="email" placeholder="Email" />
+              <Input name="password" placeholder="Senha" hide />
             </div>
             <button type="button">Entrar</button>
           </form>
