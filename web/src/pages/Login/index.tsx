@@ -3,7 +3,7 @@ import React from 'react';
 import logoImg from '../../assets/images/logo.svg';
 import './styles.css';
 import Input from '../../components/Input';
-import { FiEye } from 'react-icons/fi';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 function Login() {
   return (
@@ -24,7 +24,8 @@ function Login() {
                 name="password"
                 placeholder="Senha"
                 hide
-                icon={FiEye}
+                visibleIcon={FiEye}
+                hiddenIcon={FiEyeOff}
               />
             </div>
             <button type="button">Entrar</button>

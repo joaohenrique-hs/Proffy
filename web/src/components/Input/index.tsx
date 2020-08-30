@@ -7,13 +7,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
   icon?: React.ComponentType<IconBaseProps>;
+  alternativeIcon?: React.ComponentType<IconBaseProps>;
   hide?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
   label,
   name,
-  icon: Icon,
+  icon: MainIcon,
+  alternativeIcon: AlternativeIcon,
   hide = false,
   ...rest
 }) => {
@@ -29,9 +31,9 @@ const Input: React.FC<InputProps> = ({
       {label && <label htmlFor={name}>{label}</label>}
       <div className="input">
         <input type={show ? 'password' : 'text'} id={name} {...rest} />
-        {Icon && (
+        {MainIcon && AlternativeIcon && (
           <button onClick={handleToggleVisible}>
-            <Icon size={20} />
+            {show ? <MainIcon size={20} /> : <AlternativeIcon size={20} />}
           </button>
         )}
       </div>
