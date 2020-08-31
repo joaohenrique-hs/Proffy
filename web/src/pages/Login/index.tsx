@@ -24,8 +24,8 @@ function Login() {
                 name="password"
                 placeholder="Senha"
                 hide
-                visibleIcon={FiEye}
-                hiddenIcon={FiEyeOff}
+                icon={FiEye}
+                alternativeIcon={FiEyeOff}
               />
             </div>
             <button type="button">Entrar</button>
