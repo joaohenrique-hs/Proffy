@@ -4,6 +4,7 @@ import logoImg from '../../assets/images/logo.svg';
 import './styles.css';
 import Input from '../../components/Input';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -28,6 +29,9 @@ function Login() {
                 alternativeIcon={FiEyeOff}
               />
             </div>
+            <input type="checkbox" />
+            <label>Lembrar-me</label>
+            <Link to="/">Esqueci minha senha</Link>
             <button type="button">Entrar</button>
           </form>
         </div>
