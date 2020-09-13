@@ -29,9 +29,13 @@ function Login() {
                 alternativeIcon={FiEyeOff}
               />
             </div>
-            <input type="checkbox" />
-            <label>Lembrar-me</label>
-            <Link to="/">Esqueci minha senha</Link>
+            <div className="options">
+              <div className="remember-me">
+                <input type="checkbox" />
+                <label>Lembrar-me</label>
+              </div>
+              <Link to="#">Esqueci minha senha</Link>
+            </div>
             <button type="button">Entrar</button>
           </form>
         </div>
