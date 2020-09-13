@@ -33,6 +33,10 @@
   outline: none;
 }
 
+.input-block .input ::placeholder {
+  color: var(--color-text-complement);
+}
+
 .input-block .input svg {
   color: var(--color-primary);
 }
