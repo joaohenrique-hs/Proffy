@@ -49,10 +49,10 @@ button,
 textarea {
   font: 500 1.6rem Poppins;
   color: var(--color-text-base);
+  outline: none;
 }
 
 button {
-  outline: none;
   cursor: pointer;
 }
 
